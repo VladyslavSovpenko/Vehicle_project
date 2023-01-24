@@ -5,17 +5,16 @@ import jakarta.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name="trip")
+@Table(name = "trip")
 public class Trip {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "trip_id")
     private int id;
 
-    @ManyToOne(cascade =CascadeType.ALL)
-    @JoinColumn(name = "vehicle_id")
-    private Vehicle vehicle_id;
-
+    //    @ManyToOne(cascade =CascadeType.ALL)
+    @Column(name = "vehicle_id")
+    private Integer vehicle_id;
     @Column(name = "range")
     private int range;
     @Column(name = "fueled")
@@ -76,5 +75,13 @@ public class Trip {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Integer getVehicle_id() {
+        return vehicle_id;
+    }
+
+    public void setVehicle_id(Integer vehicle_id) {
+        this.vehicle_id = vehicle_id;
     }
 }

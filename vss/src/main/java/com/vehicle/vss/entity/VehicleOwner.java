@@ -1,8 +1,9 @@
 package com.vehicle.vss.entity;
 
-import jakarta.persistence.*;
-
-import java.util.List;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "vehicle_owner")
@@ -15,9 +16,9 @@ public class VehicleOwner {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            mappedBy = "owner")
-    private List<Vehicle> vehicles;
+//    @OneToMany(cascade = CascadeType.ALL,
+//            mappedBy = "owner")
+//    private List<Vehicle> vehicles;
 
     public VehicleOwner() {
     }
@@ -38,11 +39,11 @@ public class VehicleOwner {
         this.name = name;
     }
 
-    public List<Vehicle> getVehicles() {
-        return vehicles;
-    }
-
-    public void setVehicles(List<Vehicle> vehicles) {
-        this.vehicles = vehicles;
-    }
+//    public List<Vehicle> getVehicles() {
+//        return vehicles;
+//    }
+//
+//    public void setVehicles(List<Vehicle> vehicles) {
+//        this.vehicles = vehicles;
+//    }
 }

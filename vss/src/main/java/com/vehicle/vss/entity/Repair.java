@@ -8,13 +8,14 @@ import java.sql.Date;
 @Table(name = "repair")
 public class Repair {
     @Id
+    @Column(name = "repair_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Date date;
     private double cost;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "vehicle_id")
-    private Vehicle vehicle_id;
+//    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "vehicle_id")
+    private Integer vehicle_id;
     private String commentary;
 
     public Repair() {
@@ -44,11 +45,11 @@ public class Repair {
         this.cost = cost;
     }
 
-    public Vehicle getVehicle_id() {
+    public Integer getVehicle_id() {
         return vehicle_id;
     }
 
-    public void setVehicle_id(Vehicle vehicle_id) {
+    public void setVehicle_id(Integer vehicle_id) {
         this.vehicle_id = vehicle_id;
     }
 

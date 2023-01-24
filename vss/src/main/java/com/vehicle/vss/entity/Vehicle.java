@@ -8,6 +8,7 @@ import java.util.List;
 @Table(name = "vehicle")
 public class Vehicle {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vehicle_id")
     private int id;
     private String name;
@@ -19,12 +20,22 @@ public class Vehicle {
     private VehicleOwner owner;
 
     @OneToMany(cascade = CascadeType.ALL,
-    mappedBy = "vehicle_id")
+            mappedBy = "vehicle_id")
     private List<Trip> trips;
+
+    @OneToMany(mappedBy="vehicle_id")
+    private List<Repair> repairs;
 
     public Vehicle() {
     }
 
+    public List<Repair> getRepairs() {
+        return repairs;
+    }
+
+    public void setRepairs(List<Repair> repairs) {
+        this.repairs = repairs;
+    }
     public int getId() {
         return id;
     }
