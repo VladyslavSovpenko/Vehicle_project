@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Vehicle_project-master.iml" filepath="$PROJECT_DIR$/.idea/Vehicle_project-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vss/vss.iml" filepath="$PROJECT_DIR$/vss/vss.iml" />
+    </modules>
+  </component>
+</project>
